@@ -1,0 +1,14 @@
+version: v1
+name: sei-protobufs
+
+# Root paths where Buf will search for proto files.
+build:
+  roots:
+    - sei-chain/proto
+    - third-party
+    - cosmos-sdk
+
+# Dependencies can be added here, and buf will handle them.
+deps:
+  - buf.build/cosmos/cosmos-sdk
+  - buf.build/cosmos/third-party

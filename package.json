@@ -1,0 +1,24 @@
+{
+    "name": "seiDecoding",
+    "version": "1.1.0",
+    "main": "./dist/main.js",
+    "license": "MIT",
+    "type": "module",
+    "dependencies": {
+        "axios": "^1.7.7",
+        "ethers": "^6.13.4",
+        "protobufjs": "^7.4.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.8.4",
+        "cpx": "^1.5.0",
+        "ts-node": "^10.9.1"
+    },
+    "scripts": {
+        "build": "tsc && yarn copy-abi",
+        "postbuild": "find dist -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.mjs\"' {} \\;",
+        "copy-abi": "cpx './abi/**/*' dist/abi",
+        "start": "node dist/main.mjs",
+        "dev": "ts-node main.ts"
+    }
+}
